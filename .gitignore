@@ -2,3 +2,6 @@
 *.idea
 *.lift
 *.vscode
+*.DS_Store
+*.iml
+*.png
