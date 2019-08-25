@@ -4,35 +4,25 @@ public class Minesweeper {
         int n = Integer.parseInt(args[1]);
         int k = Integer.parseInt(args[2]);
 
-        int[][] grid = new int[m][n];
-
-        // generate mines, denoted by -1
-        int mined = 0;
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                if (mined == k) break;
-                grid[i][j] = -1; 
-                mined++;
-            }
+        int[] mines = new int[m*n];
+        // generate and shuffle mines
+        for (int i = 0; i < k; i++) {
+            mines[i] = -1;
+        }
+        for (int i = 0; i < mines.length; i++) {
+            int r = (int) (Math.random() * (mines.length - i) + i);
+            int temp = mines[r];
+            mines[r] = mines[i];
+            mines[i] = temp;
         }
 
-        // shuffle mines
+        // convert mines to grid
+        int[][] grid = new int[m][n];
+        int minesIndex = 0;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                // int placeCurrent = i * m + j;
-                // int placeToSwap = (int) (Math.random() * (m*n - placeCurrent) + placeCurrent);
-                // // swap
-                // int iToSwap = placeToSwap / m;
-                // int jToSwap = placeToSwap % m;
-                // int valueToSwap = grid[iToSwap][jToSwap];
-                // grid[iToSwap][jToSwap] = grid[i][j];
-                // grid[i][j] = valueToSwap;
-                int iToSwap = (int) (Math.random() * m);
-                int jToSwap = (int) (Math.random() * n);
-                int tmp = grid[i][j];
-                grid[i][j] = grid[iToSwap][jToSwap];
-                grid[iToSwap][jToSwap] = tmp;
-
+                grid[i][j] = mines[minesIndex];
+                minesIndex++;
             }
         }
 
