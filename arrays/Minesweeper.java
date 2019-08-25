@@ -9,6 +9,7 @@ public class Minesweeper {
         for (int i = 0; i < k; i++) {
             mines[i] = -1;
         }
+        
         for (int i = 0; i < mines.length; i++) {
             int r = (int) (Math.random() * (mines.length - i) + i);
             int temp = mines[r];
