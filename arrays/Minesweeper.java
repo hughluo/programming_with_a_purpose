@@ -19,14 +19,20 @@ public class Minesweeper {
         // shuffle mines
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                int placeCurrent = i * m + j;
-                int placeToSwap = (int) (Math.random() * (m*n - placeCurrent) + placeCurrent);
-                // swap
-                int iToSwap = placeToSwap / m;
-                int jToSwap = placeToSwap % m;
-                int valueToSwap = grid[iToSwap][jToSwap];
-                grid[iToSwap][jToSwap] = grid[i][j];
-                grid[i][j] = valueToSwap;
+                // int placeCurrent = i * m + j;
+                // int placeToSwap = (int) (Math.random() * (m*n - placeCurrent) + placeCurrent);
+                // // swap
+                // int iToSwap = placeToSwap / m;
+                // int jToSwap = placeToSwap % m;
+                // int valueToSwap = grid[iToSwap][jToSwap];
+                // grid[iToSwap][jToSwap] = grid[i][j];
+                // grid[i][j] = valueToSwap;
+                int iToSwap = (int) (Math.random() * m);
+                int jToSwap = (int) (Math.random() * n);
+                int tmp = grid[i][j];
+                grid[i][j] = grid[iToSwap][jToSwap];
+                grid[iToSwap][jToSwap] = tmp;
+
             }
         }
 

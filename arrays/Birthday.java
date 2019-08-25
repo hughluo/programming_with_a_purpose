@@ -13,7 +13,7 @@ public class Birthday {
             while (true) {
                 count++;
                 int r = (int) (Math.random() * n);
-                if(birthday[r]) break;
+                if (birthday[r]) break;
                 else birthday[r] = true;
             }
 

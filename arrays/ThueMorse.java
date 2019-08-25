@@ -18,8 +18,8 @@ public class ThueMorse {
         // print out pattern
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < len; j++) {
-                if (sequence[j] == sequence[i]) System.out.print("+ ");
-                else System.out.print("- ");
+                if (sequence[j] == sequence[i]) System.out.print("+");
+                else System.out.print("-");
             }
             System.out.print('\n');
         }
