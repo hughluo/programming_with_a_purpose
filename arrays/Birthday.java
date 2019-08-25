@@ -5,7 +5,7 @@ public class Birthday {
         int trials = Integer.parseInt(args[1]);
 
         boolean[] birthday;
-        int[] result = new int[n];
+        int[] result = new int[367];
 
         for (int i = 0; i < trials; i++) {
             birthday = new boolean[n];
