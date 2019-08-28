@@ -9,7 +9,7 @@ public class Minesweeper {
         for (int i = 0; i < k; i++) {
             mines[i] = -1;
         }
-        
+
         for (int i = 0; i < mines.length; i++) {
             int r = (int) (Math.random() * (mines.length - i) + i);
             int temp = mines[r];
@@ -17,7 +17,7 @@ public class Minesweeper {
             mines[i] = temp;
         }
 
-        // convert mines to grid
+        // convert mines to gridd
         int[][] grid = new int[m][n];
         int minesIndex = 0;
         for (int i = 0; i < m; i++) {
