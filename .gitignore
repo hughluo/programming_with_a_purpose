@@ -1,8 +1,4 @@
-*.class
-*.idea
-*.lift
-*.vscode
-*.DS_Store
-*.iml
-*.png
-*.zip
+#ignore all kind of files
+*.*
+#except java files
+!*.java
